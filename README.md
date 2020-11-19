@@ -1,8 +1,3 @@
-# count_aminoacids
-Putting a H next to the residue you want to detect on the protein structure. <br>
-Scientific rationale of sequence conservation to come. 
-
-
 
 # Hydrogen bond pattern recognition tool <br>
 Fast hydrogen bond pattern recognition tool with a GPL license. 
