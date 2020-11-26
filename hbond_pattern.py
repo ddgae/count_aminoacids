@@ -25,7 +25,7 @@
 # determine Hydrogen Bond pattern
 # usage: python hbond_pattern.py "input.pdb" "acceptor"
 # LIMITATION: only works for one or two chain protein such as an abeta protein and one substrate. still need improvement
-# on creating option commands if more chains are present or atomtype is different then suggested.
+# on creating optional commands if more chains are presented or atomtypes are different then suggested.
 import sys,os
 
 if sys.argv[0]: print("Example: python hbond_pattern.py template.pdb hbond_acceptor A B")
