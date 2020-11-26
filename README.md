@@ -10,7 +10,7 @@ Citation of the scientific rationale of helical, beta strand, loops hydrogen bon
 2. Coiled-Coil Trigger Motifs in the 1B and 2B Rod Domain Segments Are Required for the Stability of Keratin Intermediate Filaments <br>
    Molecular Biology of the Cell Vol. 11, 3539–3558, October 2000 <br>
     Kenneth C. Wu, Janine T. Bryan, Maria I. Morasso, Shyh-Ing Jang, Jeung-Hoon Lee, Jun-Mo Yang, Lyuben N. Marekov, David A.D. Parry,
-    and Peter M. Steinert
+    and Peter M. Steinert <br>
       -Biological coiled-coil study showing hetpad patterns held by hydroprobic packing and main-chain hydrogen bond interactions.
       
 3. A Buried Polar Interaction Imparts Structural Uniqueness in a Designed Heterodimeric Coiled Coilf 1995 Biochemistry <br>
