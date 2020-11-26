@@ -25,7 +25,7 @@
 # determine Hydrogen Bond pattern
 # usage: python hbond_pattern.py "input.pdb" "acceptor"
 # LIMITATION: only works for one or two chain protein such as an abeta protein and one substrate. still need improvement
-# on creating optional commands if more chains are presented or atomtypes are different then suggested.
+# on creating option commands if more chains are present or atomtype is different then suggested.
 import sys,os
 
 if sys.argv[0]: print("Example: python hbond_pattern.py template.pdb hbond_acceptor A B")
@@ -3017,7 +3017,7 @@ for cnt4 in range(len(Xvalue8)):
         for cnt5 in range(len(Yvalue12)):
             if Yvalue12[cnt5][3] == 'THR' and Yvalue12[cnt5][4] == sys.argv[4] and Yvalue12[cnt5][2] == 'OG1':
                 #print cnt4,cnt5
-                dist164 = np.sqrt((float(Xvalue8[cnt4][6]) - float(Yvalue12[cnt5][6])) ** 2 + (
+                dist_164 = np.sqrt((float(Xvalue8[cnt4][6]) - float(Yvalue12[cnt5][6])) ** 2 + (
                                 float(Xvalue8[cnt4][7]) - float(Yvalue12[cnt5][7])) ** 2 + (
                                                float(Xvalue8[cnt4][8]) - float(Yvalue12[cnt5][8])) ** 2)
                 a_164= [float(Xvalue8[cnt4][5]), float(Yvalue12[cnt5][5]), dist_164]
@@ -4371,7 +4371,7 @@ for cnt4 in range(len(Xvalue15)):
                                          float(Xvalue15[cnt4][8]) - float(Yvalue16[cnt5][8])) ** 2)
                 a_269 = [float(Xvalue15[cnt4][5]), float(Yvalue16[cnt5][5]), dist_269]
                 # print a
-                dist2.append(a_269)
+                dist269.append(a_269)
 
 
 
@@ -5114,7 +5114,7 @@ for cnt4 in range(len(Xvalue15)):
     if Xvalue15[cnt4][3] == 'THR' and Xvalue15[cnt4][4] == sys.argv[3] and Xvalue15[cnt4][2] == 'O':
         for cnt5 in range(len(Yvalue2)):
             if Yvalue2[cnt5][3] == 'ARG' and Yvalue2[cnt5][4] == 'B' and Yvalue2[cnt5][2] == 'NH2':
-                dist_330 = np.sqrt((float(Xvalue15[cnt4][6]) - float(Yvalue2[cnt5][6])) ** 2 + (
+                dist_329 = np.sqrt((float(Xvalue15[cnt4][6]) - float(Yvalue2[cnt5][6])) ** 2 + (
                         float(Xvalue15[cnt4][7]) - float(Yvalue2[cnt5][7])) ** 2 + (
                                          float(Xvalue15[cnt4][8]) - float(Yvalue2[cnt5][8])) ** 2)
                 a_329 = [float(Xvalue15[cnt4][5]), float(Yvalue2[cnt5][5]), dist_329]
@@ -5277,7 +5277,7 @@ for cnt4 in range(len(Xvalue14)):
                 dist_342 = np.sqrt((float(Xvalue14[cnt4][6]) - float(Yvalue2[cnt5][6])) ** 2 + (
                                 float(Xvalue14[cnt4][7]) - float(Yvalue2[cnt5][7])) ** 2 + (
                                                float(Xvalue14[cnt4][8]) - float(Yvalue2[cnt5][8])) ** 2)
-                a_342 = [float(Xvalue14[cnt4][5]), float(Yvalue2[cnt5][5]), dist_34]
+                a_342 = [float(Xvalue14[cnt4][5]), float(Yvalue2[cnt5][5]), dist_342]
                 # print a
                 dist342.append(a_342)
 
