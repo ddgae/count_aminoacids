@@ -21,14 +21,14 @@ f.close()
 #open of write file
 name=(sys.argv[1].split('.',1)[0])
 f1= open(name+'.fasta',"w+")
-f1.write(">P1;seq" + '\n')
-f1.write("sequence:seq:  :: ::::-1.00:-1.00" + '\n')
+f1.write(">seq" + '\n')
+#f1.write("sequence:seq:  :: ::::-1.00:-1.00" + '\n')
 letters = {'ALA':'A','ARG':'R','ASN':'N','ASP':'D','CYS':'C','GLU':'E','GLN':'Q','GLY':'G','HIS':'H','ILE':'I','LEU':'L','LYS':'K','MET':'M','PHE':'F','PRO':'P','SER':'S','THR':'T','TRP':'W','TYR':'Y','VAL':'V','TER':'/'}
 
 name=(sys.argv[1].split('.',1)[0])
 f2= open(name+'.fasta1',"w+")
-f2.write(">P1,seq"+'\n')
-f2.write("sequence:seq:  :: ::::-1.00:-1.00" + '\n')
+f2.write(">seq"+'\n')
+#f2.write("sequence:seq:  :: ::::-1.00:-1.00" + '\n')
 
 #empty char array of zeros.
 line3 = []
@@ -101,9 +101,9 @@ for line7 in lines:
         positive = positive +1
 print('- amino acid', negative, '+ amino acid', positive)
 	#RNA formal charge
-	#mean ionic activity at 298K and dielectric of 78.54
+	#Mean ionic activity at 298K and dielectric of 78.54
 	#The assumption is that it is bulk solvent in NaCL (58 molarity in 1 L therefore it is 0.058 molality)
-	#the equation was found in Chapter 5.8 
+	#The equation was found in Chapter 5.8 
 	#Cheng Raymond, Physical chemistry for the bioscience,sausalito CA, university science books,2005
 	#Mean ionic activity  = -0.509|[z+][z-]|Sqrt(I)  at standard 298K in bulk water. I = 1/2 sqrt(M*(z+))^2
 	#Determined for NaCl only. 
@@ -111,7 +111,7 @@ y = (-0.509 * (1) * 0.5) * float(math.sqrt((58/1000)*(1)**2))
 	#log of negative is NaN
 y1 = 10**y
 print("mean activity coefficient y+/-", y1)
-	#possible purposed hypothesis if RNA was a constant.
+	#Possible purposed hypothesis if an RNA was a constant.
 	# PLEASE NOTE THIS EQUATION IS A HYPOTHESIS, DO NOT TAKE IT AS IS:
 	# Constant maybe the number of charges of RNA.
 ya = (-0.509 * (1) * 0.5) * float(math.sqrt((58/1000)*(1)**2)) + int(sys.argv[2])
