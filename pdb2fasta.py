@@ -101,7 +101,7 @@ for line7 in lines:
 print('- amino acid:', negative, '+ amino acid:', positive)
     #RNA formal charge
 	#mean ionic activity at 298K and dielectric of 78.54
-	#The assumption is that it is bulk solvent in NaCL (58 molarity in 1 L therefore it is 0.058 molality)
+	#The assumption is that it is bulk solvent in NaCL (58 molarity in 1 L therefore it is 0.085 molality)
 	#the equation was found in Chapter 5.8 
 	#Cheng Raymond, Physical chemistry for the bioscience,sausalito CA, university science books,2005
 	#Mean activity coefficient = -0.509|[z+][z-]|Sqrt(I)  at standard 298K in bulk water. I = 1/2  Σ sqrt(M*(z+))^2
