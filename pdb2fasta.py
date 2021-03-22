@@ -147,7 +147,7 @@ print("activity cofficient Ey+/-", Ey2)
 pH =  (I* 0.02)
 #print(pH)
 pH2 = -(math.log10(pH))
-print("pH is dependent on concentration please script comments:", pH2)
+print("pH is dependent on concentration please check script comments:", pH2)
 
 
 
