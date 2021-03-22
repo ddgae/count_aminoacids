@@ -118,7 +118,7 @@ print("mean activity coefficient with 0.5M y+/-:", y1)
 	# Constant maybe the number of charges of RNA.
 ya = (-0.509 * (1)* (-1)) * 0.5 * float(math.sqrt((0.085)*(1)**2)) + int(sys.argv[2])
 y2 = 10**ya
-print("y+/-+ presence of RNA (hypothesis of RNA concentration in bulk water):",y2)
+print("y+/- presence of RNA (hypothesis of RNA concentration in bulk water):",y2)
     # Possible ionic strength of buffer concentration for PCR-based assay
     # Reverberi et al. Factor affecting the antigen-antibody reaction. Blood Transfusion 2007 Oct 5(4) 227-240
     # I = 1/2 *(n stoichiometry) * Σ (Molarity (i)) * v (i) ^ 2)
