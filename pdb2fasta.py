@@ -23,14 +23,12 @@ f.close()
 name=(sys.argv[1].split('.',1)[0])
 f1= open(name+'.fasta',"w+")
 f1.write(">P1;seq" + '\n')
-f1.write("sequence:seq:  :: ::::-1.00:-1.00" + '\n')
-letters = {'ALA':'A','ARG':'R','ASN':'N','ASP':'D','CYS':'C','GLU':'E','GLN':'Q','GLY':'G','HIS':'H','ILE':'I','LEU':'L','LYS':'K','MET':'M','PHE':'F','PRO':'P','SER':'S','THR':'T','TRP':'W','TYR':'Y','VAL':'V','TER':'/'}
+dletters = {'ALA':'A','ARG':'R','ASN':'N','ASP':'D','CYS':'C','GLU':'E','GLN':'Q','GLY':'G','HIS':'H','ILE':'I','LEU':'L','LYS':'K','MET':'M','PHE':'F','PRO':'P','SER':'S','THR':'T','TRP':'W','TYR':'Y','VAL':'V','TER':'/'}
 
 name=(sys.argv[1].split('.',1)[0])
 f2= open(name+'.fasta1',"w+")
 f2.write(">P1,seq"+'\n')
-f2.write("sequence:seq:  :: ::::-1.00:-1.00" + '\n')
-
+d
 #empty char array of zeros.
 line3 = []
 line4 = []
