@@ -12,7 +12,7 @@ if len(sys.argv) <= 1:
     print ('usage: python pdb2fasta.py file.pdb (RNA concentration: integer) (concentration (<0.49 M): integer) (ion species: + integer - integer) > file.fasta')
     exit()
 # Open PDB file
-# Python: readline() read a single line as a string, read() read is n bytes (8 bits), readlines() list of strings. sys.argv(): first command is read as a string.
+# Python: readline() read a single line as a string, read() read n bytes (8 bits), readlines() list of strings. sys.argv(): first command is read as a string.
 input_file1 = open(sys.argv[1])
 input_file2 = open(sys.argv[1])
 input_file3 = sys.argv[1]
