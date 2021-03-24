@@ -102,7 +102,7 @@ for line7 in input_file2:
     #if (line7[17:20] == 'LYS' and line7[13:14] == 'N' and line7[13:16] != 'NZ'):
     #    positive = positive +1
 print('- amino acid:', negative, '+ amino acid:', positive)
-# Chemistry: Formal RNA properties can be found in Review Papers in bulk properties can be determined. 
+# Chemistry: Formal RNA properties can be found in Review Papers in bulk properties. 
 # 	     Standard Room Temperature conditions are in 298K and dielectric of 78.54
 # 	     The assumptions are in bulk solvent with NaCL (58 molarity in 1 L can be converted to 0.085 molality)
 # 	     The equation are found in Chapter 5.8 of Cheng Raymond, Physical chemistry for the bioscience,sausalito CA, university science books,2005
