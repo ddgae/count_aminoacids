@@ -82,7 +82,7 @@ negative = 0
 positive = 0
 
 # Chemistry: Determination of Ionic molality
-# 	     some formulation is defined on papers, and research findings.
+# 	     some formulation are defined on papers, and research findings.
 y = list()
 ya = list()
 for line7 in input_file2:
