@@ -42,7 +42,7 @@ aa = list(letters.keys())
 aa2 = list(letters.values())
 r = list()
 z = list()
-
+# Biology: protein sequence, 20/20 amino acid
 for line in input_file1:
     #print(line)
     if line[0:3] == 'TER' and line[13:13] == '' or line[13:14] == 'N' and line[13:16] != 'ND1' and line[13:16] != 'NE2' and line[13:15] != 'NE' and line[13:16] != 'NH1' and line[13:16] != 'NH2' and line[13:15] !='NZ':
@@ -82,7 +82,7 @@ negative = 0
 positive = 0
 
 # Chemistry: Determination of Ionic molality
-# 	     some formulation are defined on papers, and research findings.
+# 	         Some formulation are defined on papers, and research findings.
 y = list()
 ya = list()
 for line7 in input_file2:
@@ -106,18 +106,18 @@ print('- amino acid:', negative, '+ amino acid:', positive)
 # 	     Standard Room Temperature conditions are in 298K and dielectric of 78.54
 # 	     The assumptions are in bulk solvent with NaCL (58 molarity in 1 L can be converted to 0.085 molality)
 # 	     The equation are found in Chapter 5.8 of Cheng Raymond, Physical chemistry for the bioscience,sausalito CA, university science books,2005
-#	     Mean activity coefficient = -0.509|[z+][z-]|Sqrt(I)  at standard room temperature 298K in bulk water. I = 1/2  Σ sqrt(M*(z+))^2
+#	     Mean activity coefficient = -0.509|[z+][z-]|Sqrt(I)  at standard room temperature 298K in bulk water. 
 # 	     Result are for NaCl only.
-#	     y = (-0.509 * (1) * 0.5) * float(math.sqrt((mol/kg*(1)**2))
-y = (-0.509 * (-1)*(1)) * 0.5 * float(math.sqrt((0.085)*(1)**2))
+#	     y = (-0.509 * (1) * 0.5?) * float(math.sqrt((mol/kg*(1)**2))
+y = (-0.509 * (-1)*(1)) * 0.085 * float(math.sqrt((0.085)*(1)**2))
 # Math Property: log of negative is NaN
 y1 = 10**y
-print("mean activity coefficient with 0.5M y+/-:", y1)
+print("mean ionic? activity coefficient with 1M y+/-:", y1)
 # Hypothesis, Mean ionic activity with RNA may be a constant value.
 # PLEASE NOTE addition of constant value is a HYPOTHESIS PLEASE DO NOT TAKE IT AS IS:
-ya = (-0.509 * (1)* (-1)) * 0.5 * float(math.sqrt((0.085)*(1)**2)) + int(sys.argv[2])/8500
+ya = (-0.509 * (1)* (-1)) * 0.085 * float(math.sqrt((0.085)*(1)**2)) + int(sys.argv[2])/8500
 y2 = 10**ya
-print("y+/-+ presence of RNA (hypothesis of RNA concentration in bulk water):",y2)
+print("y+/-+? or(a+/-)? presence of RNA (hypothesis of RNA concentration in bulk water):",y2)
 # Possible ionic strength of buffer concentration for PCR-based assay.
 # Reverberi et al. Factor affecting the antigen-antibody reaction. Blood Transfusion 2007 Oct 5(4) 227-240
 # I = 1/2 *(n stoichiometry) * Σ (Molarity (i)) * v (i) ^ 2)
