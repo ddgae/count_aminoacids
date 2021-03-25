@@ -112,7 +112,7 @@ print('- amino acid:', negative, '+ amino acid:', positive)
 y = (-0.509 * (-1)*(1)) * 0.085 * float(math.sqrt((0.085)*(1)**2))
 # Math Property: log of negative is NaN
 y1 = 10**y
-print("mean ionic? activity coefficient with 1M y+/-:", y1)
+print("mean ionic? activity coefficient with 1M concentration y+/-? or a(+/-)?:", y1)
 # Hypothesis, Mean ionic activity with RNA may be a constant value.
 # PLEASE NOTE addition of constant value is a HYPOTHESIS PLEASE DO NOT TAKE IT AS IS:
 ya = (-0.509 * (1)* (-1)) * 0.085 * float(math.sqrt((0.085)*(1)**2)) + int(sys.argv[2])/8500
