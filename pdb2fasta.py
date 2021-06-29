@@ -9,10 +9,11 @@ import math
 # copyright © 2021 david gae Some right reserved
 
 if len(sys.argv) <= 1:
+    print ('use the following TER CARD FORMAT:[TER    1965  X   TER X 245                                                      ]') 
     print ('usage: python pdb2fasta.py file.pdb (RNA concentration: integer) (concentration (<0.49 M): integer) (ion species: + integer - integer) > file.fasta')
     exit()
 # Open PDB file
-# Python: readline() read a single line as a string, read() read n bytes (8 bits), readlines() list of strings. sys.argv(): first command is read as a string.
+# Python: readline() read a single line as a string, read() read is n bytes (8 bits), readlines() list of strings. sys.argv(): first command is read as a string.
 input_file1 = open(sys.argv[1])
 input_file2 = open(sys.argv[1])
 input_file3 = sys.argv[1]
@@ -37,15 +38,16 @@ line4 = []
 line5 = []
 line2 = []
 line6 = []
+line = []
 # Dictionary of amino acids and list based on dictionary.
 aa = list(letters.keys())
 aa2 = list(letters.values())
 r = list()
 z = list()
-# Biology: protein sequence, 20/20 amino acid
+
 for line in input_file1:
     #print(line)
-    if line[0:3] == 'TER' and line[13:13] == '' or line[13:14] == 'N' and line[13:16] != 'ND1' and line[13:16] != 'NE2' and line[13:15] != 'NE' and line[13:16] != 'NH1' and line[13:16] != 'NH2' and line[13:15] !='NZ':
+    if line[0:3] == 'TER' and line[13:13] == '' or line[13:14] == 'N' and line[13:16] != 'ND1' and line[13:16] != 'NE2' and line[13:15] != 'NE' and line[13:16] != 'NH1' and line[13:16] != 'NH2' and line[13:15] !='NZ' and line[13:16] != 'ND2':
        line3.append(line)
        # print(line)
        for i in line3:
@@ -82,7 +84,7 @@ negative = 0
 positive = 0
 
 # Chemistry: Determination of Ionic molality
-# 	         Some formulation are defined on papers, and research findings.
+# 	     some formulation is defined on papers, and research findings.
 y = list()
 ya = list()
 for line7 in input_file2:
@@ -102,22 +104,25 @@ for line7 in input_file2:
     #if (line7[17:20] == 'LYS' and line7[13:14] == 'N' and line7[13:16] != 'NZ'):
     #    positive = positive +1
 print('- amino acid:', negative, '+ amino acid:', positive)
-# Chemistry: Formal RNA properties can be found in Review Papers in bulk properties. 
+# Chemistry: Formal RNA in bulk properties can be determined. Review few papers
 # 	     Standard Room Temperature conditions are in 298K and dielectric of 78.54
 # 	     The assumptions are in bulk solvent with NaCL (58 molarity in 1 L can be converted to 0.085 molality)
 # 	     The equation are found in Chapter 5.8 of Cheng Raymond, Physical chemistry for the bioscience,sausalito CA, university science books,2005
-#	     Mean activity coefficient = -0.509|[z+][z-]|Sqrt(I)  at standard room temperature 298K in bulk water. 
+#	     Mean activity coefficient = -0.509|[z+][z-]|Sqrt(I)  at standard room temperature 298K in bulk water.
 # 	     Result are for NaCl only.
 #	     y = (-0.509 * (1) * 0.5?) * float(math.sqrt((mol/kg*(1)**2))
 y = (-0.509 * (-1)*(1)) * 0.085 * float(math.sqrt((0.085)*(1)**2))
+#yA = y * (0.085)
 # Math Property: log of negative is NaN
 y1 = 10**y
-print("mean ionic? activity coefficient with 1M concentration y+/-? or a(+/-)?:", y1)
+print("mean ionic activity coefficient with 1M  concentration a+/-:", y1)
+#print("mean ionic activity", yA)
 # Hypothesis, Mean ionic activity with RNA may be a constant value.
 # PLEASE NOTE addition of constant value is a HYPOTHESIS PLEASE DO NOT TAKE IT AS IS:
-ya = (-0.509 * (1)* (-1)) * 0.085 * float(math.sqrt((0.085)*(1)**2)) + int(sys.argv[2])/8500
+#ya = (-0.509 * (1)* (-1)) * 0.085 * float(math.sqrt((0.085)*(1)**2)) + int(sys.argv[2])/8500
+ya = (-0.509 * (1)* (-1)) ** float(math.sqrt((0.085)*(1)**2)) + int(sys.argv[2])/8500
 y2 = 10**ya
-print("y+/-+? or(a+/-)? presence of RNA (hypothesis of RNA concentration in bulk water):",y2)
+print("y+/-+(a+/-) presence of RNA (hypothesis of RNA concentration in bulk water):",y2)
 # Possible ionic strength of buffer concentration for PCR-based assay.
 # Reverberi et al. Factor affecting the antigen-antibody reaction. Blood Transfusion 2007 Oct 5(4) 227-240
 # I = 1/2 *(n stoichiometry) * Σ (Molarity (i)) * v (i) ^ 2)
@@ -127,8 +132,7 @@ print("y+/-+? or(a+/-)? presence of RNA (hypothesis of RNA concentration in bulk
 #     Remember that the standard volume for buffer is about 500 ml or PCR reservoir, 100/50 ml
 #     Calculation: 58 g/mol molecular weight of NaCl * 1 mol/L = 58 g/L
 #    		   34 plates (40 rxn extra = 0.01 L or 10 ml) * 96 well plate per 200 ul rxn) = 0.6628 L
-#     		   58 g/mol * 0.02(mol/L) * 0.6628 L = X g (Volume required use for 96 well plate, if master mixature is purchased this may be the volume,
-# 							    I might be wrong).
+#     		   58 g/mol * 0.02(mol/L) * 0.6628 L = X g (Volume required use for 96 well plate, if master mixature is purchased this may be the volume,I might be wrong).
 I = (0.5 * (1))  * float(sys.argv[3])* int(sys.argv[4])** 2 + float(sys.argv[3])* int(sys.argv[5]) ** 2
 #I = (0.5 * (1)) * float((sys.argv[2])) (sys.argv[3])*(sys.argv[4])
 print("Ionic strength:", I)
@@ -148,7 +152,7 @@ B2 = abs(int(B) ** 2)
 Ey = -0.509 * A2 * B2 * math.sqrt(I)
 #Ey = -0.509 * float(sys.argv[3])*float(sys.argv[2])+float(sys.argv[4])*float(sys.argv[2])
 Ey2 = 10 ** Ey
-print("activity cofficient Ey+/-", Ey2)
+print("activity coefficient Ey+/-", Ey2)
 #Chemistry:	      pH value related to ionic concentration
 # 		      This theory hold true in low ionic concentration.
 # 		      0.02 M is standard buffer concentration.
